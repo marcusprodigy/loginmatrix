@@ -3,6 +3,8 @@ import { useState, useEffect } from 'react'
 
 export default function Home() {
   const [signin, setSignin] = useState("");
+  const [x, setX] = useState(0);
+
   let i = -1;
 
   useEffect(() => {
@@ -38,6 +40,28 @@ export default function Home() {
       }
     }, 300);
   }, [])
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setX((prevX) => {
+        const newX = prevX + 1;
+
+        if (newX > 6) {
+          clearInterval(interval);
+        }
+
+        return newX;
+      });
+    }, 600);
+
+    if (x > 6) {
+      setX(0)
+    }
+
+    // Limpar o intervalo quando o componente é desmontado
+    return () => clearInterval(interval);
+  }); // Dependência vazia para garantir que o useEffect é executado apenas uma vez
+
   return (
     <main className="w-screen h-screen grid grid-cols-12 bg-black">
 
@@ -54,78 +78,78 @@ export default function Home() {
         </section>
       </article>
 
-      <div className=' w-30 h-30 border-greenmatrix border hover:duration-100 transition-colors hover:bg-greenmatrix duration-3000'></div>
-      <div className=' w-30 h-30 border-greenmatrix border hover:duration-100 transition-colors hover:bg-greenmatrix duration-3000'></div>
-      <div className=' w-30 h-30 border-greenmatrix border hover:duration-100 transition-colors hover:bg-greenmatrix duration-3000'></div>
-      <div className=' w-30 h-30 border-greenmatrix border hover:duration-100 transition-colors hover:bg-greenmatrix duration-3000'></div>
-      <div className=' w-30 h-30 border-greenmatrix border hover:duration-100 transition-colors hover:bg-greenmatrix duration-3000'></div>
-      <div className=' w-30 h-30 border-greenmatrix border hover:duration-100 transition-colors hover:bg-greenmatrix duration-3000'></div>
-      <div className=' w-30 h-30 border-greenmatrix border hover:duration-100 transition-colors hover:bg-greenmatrix duration-3000'></div>
-      <div className=' w-30 h-30 border-greenmatrix border hover:duration-100 transition-colors hover:bg-greenmatrix duration-3000'></div>
-      <div className=' w-30 h-30 border-greenmatrix border hover:duration-100 transition-colors hover:bg-greenmatrix duration-3000'></div>
-      <div className=' w-30 h-30 border-greenmatrix border hover:duration-100 transition-colors hover:bg-greenmatrix duration-3000'></div>
-      <div className=' w-30 h-30 border-greenmatrix border hover:duration-100 transition-colors hover:bg-greenmatrix duration-3000'></div>
-      <div className=' w-30 h-30 border-greenmatrix border hover:duration-100 transition-colors hover:bg-greenmatrix duration-3000'></div>
-      <div className=' w-30 h-30 border-greenmatrix border hover:duration-100 transition-colors hover:bg-greenmatrix duration-3000'></div>
-      <div className=' w-30 h-30 border-greenmatrix border hover:duration-100 transition-colors hover:bg-greenmatrix duration-3000'></div>
-      <div className=' w-30 h-30 border-greenmatrix border hover:duration-100 transition-colors hover:bg-greenmatrix duration-3000'></div>
-      <div className=' w-30 h-30 border-greenmatrix border hover:duration-100 transition-colors hover:bg-greenmatrix duration-3000'></div>
-      <div className=' w-30 h-30 border-greenmatrix border hover:duration-100 transition-colors hover:bg-greenmatrix duration-3000'></div>
-      <div className=' w-30 h-30 border-greenmatrix border hover:duration-100 transition-colors hover:bg-greenmatrix duration-3000'></div>
-      <div className=' w-30 h-30 border-greenmatrix border hover:duration-100 transition-colors hover:bg-greenmatrix duration-3000'></div>
-      <div className=' w-30 h-30 border-greenmatrix border hover:duration-100 transition-colors hover:bg-greenmatrix duration-3000'></div>
-      <div className=' w-30 h-30 border-greenmatrix border hover:duration-100 transition-colors hover:bg-greenmatrix duration-3000'></div>
-      <div className=' w-30 h-30 border-greenmatrix border hover:duration-100 transition-colors hover:bg-greenmatrix duration-3000'></div>
-      <div className=' w-30 h-30 border-greenmatrix border hover:duration-100 transition-colors hover:bg-greenmatrix duration-3000'></div>
-      <div className=' w-30 h-30 border-greenmatrix border hover:duration-100 transition-colors hover:bg-greenmatrix duration-3000'></div>
-      <div className=' w-30 h-30 border-greenmatrix border hover:duration-100 transition-colors hover:bg-greenmatrix duration-3000'></div>
-      <div className=' w-30 h-30 border-greenmatrix border hover:duration-100 transition-colors hover:bg-greenmatrix duration-3000'></div>
-      <div className=' w-30 h-30 border-greenmatrix border hover:duration-100 transition-colors hover:bg-greenmatrix duration-3000'></div>
-      <div className=' w-30 h-30 border-greenmatrix border hover:duration-100 transition-colors hover:bg-greenmatrix duration-3000'></div>
-      <div className=' w-30 h-30 border-greenmatrix border hover:duration-100 transition-colors hover:bg-greenmatrix duration-3000'></div>
-      <div className=' w-30 h-30 border-greenmatrix border hover:duration-100 transition-colors hover:bg-greenmatrix duration-3000'></div>
-      <div className=' w-30 h-30 border-greenmatrix border hover:duration-100 transition-colors hover:bg-greenmatrix duration-3000'></div>
-      <div className=' w-30 h-30 border-greenmatrix border hover:duration-100 transition-colors hover:bg-greenmatrix duration-3000'></div>
-      <div className=' w-30 h-30 border-greenmatrix border hover:duration-100 transition-colors hover:bg-greenmatrix duration-3000'></div>
-      <div className=' w-30 h-30 border-greenmatrix border hover:duration-100 transition-colors hover:bg-greenmatrix duration-3000'></div>
-      <div className=' w-30 h-30 border-greenmatrix border hover:duration-100 transition-colors hover:bg-greenmatrix duration-3000'></div>
-      <div className=' w-30 h-30 border-greenmatrix border hover:duration-100 transition-colors hover:bg-greenmatrix duration-3000'></div>
-      <div className=' w-30 h-30 border-greenmatrix border hover:duration-100 transition-colors hover:bg-greenmatrix duration-3000'></div>
-      <div className=' w-30 h-30 border-greenmatrix border hover:duration-100 transition-colors hover:bg-greenmatrix duration-3000'></div>
-      <div className=' w-30 h-30 border-greenmatrix border hover:duration-100 transition-colors hover:bg-greenmatrix duration-3000'></div>
-      <div className=' w-30 h-30 border-greenmatrix border hover:duration-100 transition-colors hover:bg-greenmatrix duration-3000'></div>
-      <div className=' w-30 h-30 border-greenmatrix border hover:duration-100 transition-colors hover:bg-greenmatrix duration-3000'></div>
-      <div className=' w-30 h-30 border-greenmatrix border hover:duration-100 transition-colors hover:bg-greenmatrix duration-3000'></div>
-      <div className=' w-30 h-30 border-greenmatrix border hover:duration-100 transition-colors hover:bg-greenmatrix duration-3000'></div>
-      <div className=' w-30 h-30 border-greenmatrix border hover:duration-100 transition-colors hover:bg-greenmatrix duration-3000'></div>
-      <div className=' w-30 h-30 border-greenmatrix border hover:duration-100 transition-colors hover:bg-greenmatrix duration-3000'></div>
-      <div className=' w-30 h-30 border-greenmatrix border hover:duration-100 transition-colors hover:bg-greenmatrix duration-3000'></div>
-      <div className=' w-30 h-30 border-greenmatrix border hover:duration-100 transition-colors hover:bg-greenmatrix duration-3000'></div>
-      <div className=' w-30 h-30 border-greenmatrix border hover:duration-100 transition-colors hover:bg-greenmatrix duration-3000'></div>
-      <div className=' w-30 h-30 border-greenmatrix border hover:duration-100 transition-colors hover:bg-greenmatrix duration-3000'></div>
-      <div className=' w-30 h-30 border-greenmatrix border hover:duration-100 transition-colors hover:bg-greenmatrix duration-3000'></div>
-      <div className=' w-30 h-30 border-greenmatrix border hover:duration-100 transition-colors hover:bg-greenmatrix duration-3000'></div>
-      <div className=' w-30 h-30 border-greenmatrix border hover:duration-100 transition-colors hover:bg-greenmatrix duration-3000'></div>
-      <div className=' w-30 h-30 border-greenmatrix border hover:duration-100 transition-colors hover:bg-greenmatrix duration-3000'></div>
-      <div className=' w-30 h-30 border-greenmatrix border hover:duration-100 transition-colors hover:bg-greenmatrix duration-3000'></div>
-      <div className=' w-30 h-30 border-greenmatrix border hover:duration-100 transition-colors hover:bg-greenmatrix duration-3000'></div>
-      <div className=' w-30 h-30 border-greenmatrix border hover:duration-100 transition-colors hover:bg-greenmatrix duration-3000'></div>
-      <div className=' w-30 h-30 border-greenmatrix border hover:duration-100 transition-colors hover:bg-greenmatrix duration-3000'></div>
-      <div className=' w-30 h-30 border-greenmatrix border hover:duration-100 transition-colors hover:bg-greenmatrix duration-3000'></div>
-      <div className=' w-30 h-30 border-greenmatrix border hover:duration-100 transition-colors hover:bg-greenmatrix duration-3000'></div>
-      <div className=' w-30 h-30 border-greenmatrix border hover:duration-100 transition-colors hover:bg-greenmatrix duration-3000'></div>
-      <div className=' w-30 h-30 border-greenmatrix border hover:duration-100 transition-colors hover:bg-greenmatrix duration-3000'></div>
-      <div className=' w-30 h-30 border-greenmatrix border hover:duration-100 transition-colors hover:bg-greenmatrix duration-3000'></div>
-      <div className=' w-30 h-30 border-greenmatrix border hover:duration-100 transition-colors hover:bg-greenmatrix duration-3000'></div>
-      <div className=' w-30 h-30 border-greenmatrix border hover:duration-100 transition-colors hover:bg-greenmatrix duration-3000'></div>
-      <div className=' w-30 h-30 border-greenmatrix border hover:duration-100 transition-colors hover:bg-greenmatrix duration-3000'></div>
-      <div className=' w-30 h-30 border-greenmatrix border hover:duration-100 transition-colors hover:bg-greenmatrix duration-3000'></div>
-      <div className=' w-30 h-30 border-greenmatrix border hover:duration-100 transition-colors hover:bg-greenmatrix duration-3000'></div>
-      <div className=' w-30 h-30 border-greenmatrix border hover:duration-100 transition-colors hover:bg-greenmatrix duration-3000'></div>
-      <div className=' w-30 h-30 border-greenmatrix border hover:duration-100 transition-colors hover:bg-greenmatrix duration-3000'></div>
-      <div className=' w-30 h-30 border-greenmatrix border hover:duration-100 transition-colors hover:bg-greenmatrix duration-3000'></div>
-      <div className=' w-30 h-30 border-greenmatrix border hover:duration-100 transition-colors hover:bg-greenmatrix duration-3000'></div>
-      <div className=' w-30 h-30 border-greenmatrix border hover:duration-100 transition-colors hover:bg-greenmatrix duration-3000'></div>
+      <div className={`${x === 1 ? 'border-greenmatrix border duration-1000' : 'border-black duration-3000'} transition-all w-30 h-30  hover:duration-100 hover:bg-greenmatrix duration-3000`} />
+      <div className={`${x === 1 ? 'border-greenmatrix border duration-1000' : 'border-black duration-3000'} transition-all w-30 h-30  hover:duration-100 hover:bg-greenmatrix duration-3000`} />
+      <div className={`${x === 1 ? 'border-greenmatrix border duration-1000' : 'border-black duration-3000'} transition-all w-30 h-30  hover:duration-100 hover:bg-greenmatrix duration-3000`} />
+      <div className={`${x === 1 ? 'border-greenmatrix border duration-1000' : 'border-black duration-3000'} transition-all w-30 h-30  hover:duration-100 hover:bg-greenmatrix duration-3000`} />
+      <div className={`${x === 1 ? 'border-greenmatrix border duration-1000' : 'border-black duration-3000'} transition-all w-30 h-30  hover:duration-100 hover:bg-greenmatrix duration-3000`} />
+      <div className={`${x === 1 ? 'border-greenmatrix border duration-1000' : 'border-black duration-3000'} transition-all w-30 h-30  hover:duration-100 hover:bg-greenmatrix duration-3000`} />
+      <div className={`${x === 1 ? 'border-greenmatrix border duration-1000' : 'border-black duration-3000'} transition-all w-30 h-30  hover:duration-100 hover:bg-greenmatrix duration-3000`} />
+      <div className={`${x === 1 ? 'border-greenmatrix border duration-1000' : 'border-black duration-3000'} transition-all w-30 h-30  hover:duration-100 hover:bg-greenmatrix duration-3000`} />
+      <div className={`${x === 1 ? 'border-greenmatrix border duration-1000' : 'border-black duration-3000'} transition-all w-30 h-30  hover:duration-100 hover:bg-greenmatrix duration-3000`} />
+      <div className={`${x === 1 ? 'border-greenmatrix border duration-1000' : 'border-black duration-3000'} transition-all w-30 h-30  hover:duration-100 hover:bg-greenmatrix duration-3000`} />
+      <div className={`${x === 1 ? 'border-greenmatrix border duration-1000' : 'border-black duration-3000'} transition-all w-30 h-30  hover:duration-100 hover:bg-greenmatrix duration-3000`} />
+      <div className={`${x === 1 ? 'border-greenmatrix border duration-1000' : 'border-black duration-3000'} transition-all w-30 h-30  hover:duration-100 hover:bg-greenmatrix duration-3000`} />
+      <div className={`${x === 2 ? 'border-greenmatrix border duration-1000' : 'border-black duration-3000'} transition-all w-30 h-30  hover:duration-100 hover:bg-greenmatrix duration-3000`} />
+      <div className={`${x === 2 ? 'border-greenmatrix border duration-1000' : 'border-black duration-3000'} transition-all w-30 h-30  hover:duration-100 hover:bg-greenmatrix duration-3000`} />
+      <div className={`${x === 2 ? 'border-greenmatrix border duration-1000' : 'border-black duration-3000'} transition-all w-30 h-30  hover:duration-100 hover:bg-greenmatrix duration-3000`} />
+      <div className={`${x === 2 ? 'border-greenmatrix border duration-1000' : 'border-black duration-3000'} transition-all w-30 h-30  hover:duration-100 hover:bg-greenmatrix duration-3000`} />
+      <div className={`${x === 2 ? 'border-greenmatrix border duration-1000' : 'border-black duration-3000'} transition-all w-30 h-30  hover:duration-100 hover:bg-greenmatrix duration-3000`} />
+      <div className={`${x === 2 ? 'border-greenmatrix border duration-1000' : 'border-black duration-3000'} transition-all w-30 h-30  hover:duration-100 hover:bg-greenmatrix duration-3000`} />
+      <div className={`${x === 2 ? 'border-greenmatrix border duration-1000' : 'border-black duration-3000'} transition-all w-30 h-30  hover:duration-100 hover:bg-greenmatrix duration-3000`} />
+      <div className={`${x === 2 ? 'border-greenmatrix border duration-1000' : 'border-black duration-3000'} transition-all w-30 h-30  hover:duration-100 hover:bg-greenmatrix duration-3000`} />
+      <div className={`${x === 2 ? 'border-greenmatrix border duration-1000' : 'border-black duration-3000'} transition-all w-30 h-30  hover:duration-100 hover:bg-greenmatrix duration-3000`} />
+      <div className={`${x === 2 ? 'border-greenmatrix border duration-1000' : 'border-black duration-3000'} transition-all w-30 h-30  hover:duration-100 hover:bg-greenmatrix duration-3000`} />
+      <div className={`${x === 2 ? 'border-greenmatrix border duration-1000' : 'border-black duration-3000'} transition-all w-30 h-30  hover:duration-100 hover:bg-greenmatrix duration-3000`} />
+      <div className={`${x === 2 ? 'border-greenmatrix border duration-1000' : 'border-black duration-3000'} transition-all w-30 h-30  hover:duration-100 hover:bg-greenmatrix duration-3000`} />
+      <div className={`${x === 3 ? 'border-greenmatrix border duration-1000' : 'border-black duration-3000'} transition-all w-30 h-30  hover:duration-100 hover:bg-greenmatrix duration-3000`} />
+      <div className={`${x === 3 ? 'border-greenmatrix border duration-1000' : 'border-black duration-3000'} transition-all w-30 h-30  hover:duration-100 hover:bg-greenmatrix duration-3000`} />
+      <div className={`${x === 3 ? 'border-greenmatrix border duration-1000' : 'border-black duration-3000'} transition-all w-30 h-30  hover:duration-100 hover:bg-greenmatrix duration-3000`} />
+      <div className={`${x === 3 ? 'border-greenmatrix border duration-1000' : 'border-black duration-3000'} transition-all w-30 h-30  hover:duration-100 hover:bg-greenmatrix duration-3000`} />
+      <div className={`${x === 3 ? 'border-greenmatrix border duration-1000' : 'border-black duration-3000'} transition-all w-30 h-30  hover:duration-100 hover:bg-greenmatrix duration-3000`} />
+      <div className={`${x === 3 ? 'border-greenmatrix border duration-1000' : 'border-black duration-3000'} transition-all w-30 h-30  hover:duration-100 hover:bg-greenmatrix duration-3000`} />
+      <div className={`${x === 3 ? 'border-greenmatrix border duration-1000' : 'border-black duration-3000'} transition-all w-30 h-30  hover:duration-100 hover:bg-greenmatrix duration-3000`} />
+      <div className={`${x === 3 ? 'border-greenmatrix border duration-1000' : 'border-black duration-3000'} transition-all w-30 h-30  hover:duration-100 hover:bg-greenmatrix duration-3000`} />
+      <div className={`${x === 3 ? 'border-greenmatrix border duration-1000' : 'border-black duration-3000'} transition-all w-30 h-30  hover:duration-100 hover:bg-greenmatrix duration-3000`} />
+      <div className={`${x === 3 ? 'border-greenmatrix border duration-1000' : 'border-black duration-3000'} transition-all w-30 h-30  hover:duration-100 hover:bg-greenmatrix duration-3000`} />
+      <div className={`${x === 3 ? 'border-greenmatrix border duration-1000' : 'border-black duration-3000'} transition-all w-30 h-30  hover:duration-100 hover:bg-greenmatrix duration-3000`} />
+      <div className={`${x === 3 ? 'border-greenmatrix border duration-1000' : 'border-black duration-3000'} transition-all w-30 h-30  hover:duration-100 hover:bg-greenmatrix duration-3000`} />
+      <div className={`${x === 4 ? 'border-greenmatrix border duration-1000' : 'border-black duration-3000'} transition-all w-30 h-30  hover:duration-100 hover:bg-greenmatrix duration-3000`} />
+      <div className={`${x === 4 ? 'border-greenmatrix border duration-1000' : 'border-black duration-3000'} transition-all w-30 h-30  hover:duration-100 hover:bg-greenmatrix duration-3000`} />
+      <div className={`${x === 4 ? 'border-greenmatrix border duration-1000' : 'border-black duration-3000'} transition-all w-30 h-30  hover:duration-100 hover:bg-greenmatrix duration-3000`} />
+      <div className={`${x === 4 ? 'border-greenmatrix border duration-1000' : 'border-black duration-3000'} transition-all w-30 h-30  hover:duration-100 hover:bg-greenmatrix duration-3000`} />
+      <div className={`${x === 4 ? 'border-greenmatrix border duration-1000' : 'border-black duration-3000'} transition-all w-30 h-30  hover:duration-100 hover:bg-greenmatrix duration-3000`} />
+      <div className={`${x === 4 ? 'border-greenmatrix border duration-1000' : 'border-black duration-3000'} transition-all w-30 h-30  hover:duration-100 hover:bg-greenmatrix duration-3000`} />
+      <div className={`${x === 4 ? 'border-greenmatrix border duration-1000' : 'border-black duration-3000'} transition-all w-30 h-30  hover:duration-100 hover:bg-greenmatrix duration-3000`} />
+      <div className={`${x === 4 ? 'border-greenmatrix border duration-1000' : 'border-black duration-3000'} transition-all w-30 h-30  hover:duration-100 hover:bg-greenmatrix duration-3000`} />
+      <div className={`${x === 4 ? 'border-greenmatrix border duration-1000' : 'border-black duration-3000'} transition-all w-30 h-30  hover:duration-100 hover:bg-greenmatrix duration-3000`} />
+      <div className={`${x === 4 ? 'border-greenmatrix border duration-1000' : 'border-black duration-3000'} transition-all w-30 h-30  hover:duration-100 hover:bg-greenmatrix duration-3000`} />
+      <div className={`${x === 4 ? 'border-greenmatrix border duration-1000' : 'border-black duration-3000'} transition-all w-30 h-30  hover:duration-100 hover:bg-greenmatrix duration-3000`} />
+      <div className={`${x === 4 ? 'border-greenmatrix border duration-1000' : 'border-black duration-3000'} transition-all w-30 h-30  hover:duration-100 hover:bg-greenmatrix duration-3000`} />
+      <div className={`${x === 5 ? 'border-greenmatrix border duration-1000' : 'border-black duration-3000'} transition-all w-30 h-30  hover:duration-100 hover:bg-greenmatrix duration-3000`} />
+      <div className={`${x === 5 ? 'border-greenmatrix border duration-1000' : 'border-black duration-3000'} transition-all w-30 h-30  hover:duration-100 hover:bg-greenmatrix duration-3000`} />
+      <div className={`${x === 5 ? 'border-greenmatrix border duration-1000' : 'border-black duration-3000'} transition-all w-30 h-30  hover:duration-100 hover:bg-greenmatrix duration-3000`} />
+      <div className={`${x === 5 ? 'border-greenmatrix border duration-1000' : 'border-black duration-3000'} transition-all w-30 h-30  hover:duration-100 hover:bg-greenmatrix duration-3000`} />
+      <div className={`${x === 5 ? 'border-greenmatrix border duration-1000' : 'border-black duration-3000'} transition-all w-30 h-30  hover:duration-100 hover:bg-greenmatrix duration-3000`} />
+      <div className={`${x === 5 ? 'border-greenmatrix border duration-1000' : 'border-black duration-3000'} transition-all w-30 h-30  hover:duration-100 hover:bg-greenmatrix duration-3000`} />
+      <div className={`${x === 5 ? 'border-greenmatrix border duration-1000' : 'border-black duration-3000'} transition-all w-30 h-30  hover:duration-100 hover:bg-greenmatrix duration-3000`} />
+      <div className={`${x === 5 ? 'border-greenmatrix border duration-1000' : 'border-black duration-3000'} transition-all w-30 h-30  hover:duration-100 hover:bg-greenmatrix duration-3000`} />
+      <div className={`${x === 5 ? 'border-greenmatrix border duration-1000' : 'border-black duration-3000'} transition-all w-30 h-30  hover:duration-100 hover:bg-greenmatrix duration-3000`} />
+      <div className={`${x === 5 ? 'border-greenmatrix border duration-1000' : 'border-black duration-3000'} transition-all w-30 h-30  hover:duration-100 hover:bg-greenmatrix duration-3000`} />
+      <div className={`${x === 5 ? 'border-greenmatrix border duration-1000' : 'border-black duration-3000'} transition-all w-30 h-30  hover:duration-100 hover:bg-greenmatrix duration-3000`} />
+      <div className={`${x === 5 ? 'border-greenmatrix border duration-1000' : 'border-black duration-3000'} transition-all w-30 h-30  hover:duration-100 hover:bg-greenmatrix duration-3000`} />
+      <div className={`${x === 6 ? 'border-greenmatrix border duration-1000' : 'border-black duration-3000'} transition-all w-30 h-30  hover:duration-100 hover:bg-greenmatrix duration-3000`} />
+      <div className={`${x === 6 ? 'border-greenmatrix border duration-1000' : 'border-black duration-3000'} transition-all w-30 h-30  hover:duration-100 hover:bg-greenmatrix duration-3000`} />
+      <div className={`${x === 6 ? 'border-greenmatrix border duration-1000' : 'border-black duration-3000'} transition-all w-30 h-30  hover:duration-100 hover:bg-greenmatrix duration-3000`} />
+      <div className={`${x === 6 ? 'border-greenmatrix border duration-1000' : 'border-black duration-3000'} transition-all w-30 h-30  hover:duration-100 hover:bg-greenmatrix duration-3000`} />
+      <div className={`${x === 6 ? 'border-greenmatrix border duration-1000' : 'border-black duration-3000'} transition-all w-30 h-30  hover:duration-100 hover:bg-greenmatrix duration-3000`} />
+      <div className={`${x === 6 ? 'border-greenmatrix border duration-1000' : 'border-black duration-3000'} transition-all w-30 h-30  hover:duration-100 hover:bg-greenmatrix duration-3000`} />
+      <div className={`${x === 6 ? 'border-greenmatrix border duration-1000' : 'border-black duration-3000'} transition-all w-30 h-30  hover:duration-100 hover:bg-greenmatrix duration-3000`} />
+      <div className={`${x === 6 ? 'border-greenmatrix border duration-1000' : 'border-black duration-3000'} transition-all w-30 h-30  hover:duration-100 hover:bg-greenmatrix duration-3000`} />
+      <div className={`${x === 6 ? 'border-greenmatrix border duration-1000' : 'border-black duration-3000'} transition-all w-30 h-30  hover:duration-100 hover:bg-greenmatrix duration-3000`} />
+      <div className={`${x === 6 ? 'border-greenmatrix border duration-1000' : 'border-black duration-3000'} transition-all w-30 h-30  hover:duration-100 hover:bg-greenmatrix duration-3000`} />
+      <div className={`${x === 6 ? 'border-greenmatrix border duration-1000' : 'border-black duration-3000'} transition-all w-30 h-30  hover:duration-100 hover:bg-greenmatrix duration-3000`} />
+      <div className={`${x === 6 ? 'border-greenmatrix border duration-1000' : 'border-black duration-3000'} transition-all w-30 h-30  hover:duration-100 hover:bg-greenmatrix duration-3000`} />
     </main>
   )
-}
+} 
